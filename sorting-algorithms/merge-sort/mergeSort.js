@@ -1,3 +1,6 @@
+import benchmark from '../benchmark.js';
+import { largeDataSet, mediumDataSet, smallDataSet } from '../data.js';
+
 function mergeSort(arr) {
   // Base case: A list of zero or one elements is sorted, by definition.
   if (arr.length <= 1) {
@@ -51,3 +54,13 @@ function merge(left, right) {
 // Example usage:
 const arr = [38, 27, 43, 3, 9, 82, 10];
 console.log(mergeSort(arr)); // [3, 9, 10, 27, 38, 43, 82]
+
+console.log(
+  `Merge sort on small data: ${benchmark(mergeSort, smallDataSet)}ms`
+);
+console.log(
+  `Merge sort on medium data: ${benchmark(mergeSort, mediumDataSet)}ms`
+);
+console.log(
+  `Merge sort on large data: ${benchmark(mergeSort, largeDataSet)}ms`
+);
