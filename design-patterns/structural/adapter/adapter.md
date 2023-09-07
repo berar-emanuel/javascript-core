@@ -19,3 +19,5 @@ Text messaging application focusing on adapting external message sources into th
 5. In the `send()` method of each adapter, we call the corresponding method from the external library (`sendExternalTextMessage` for text messages and `sendExternalImageMessage` for image messages).
 
 6. In the usage example, we create instances of the adapters and pass them to the external messaging library. When we call the `send()` method on each adapter, it uses the external library to send the adapted message content.
+
+This implementation of the Adapter pattern allows us to seamlessly integrate an external messaging library into our application by adapting its methods to our standard message-sending interface. This way, we can use the external library's functionality while maintaining a consistent messaging interface within our application.
